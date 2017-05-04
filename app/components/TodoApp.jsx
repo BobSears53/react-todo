@@ -1,5 +1,6 @@
 var React = require('react');
 var uuid = require('node-uuid');
+var moment = require('moment');
 
 var TodoList = require('TodoList');
 var AddTodo = require('AddTodo');
@@ -18,14 +19,16 @@ var TodoApp = React.createClass({
         TodoAPI.setTodos(this.state.todos);
     },
     handleAddTodo: function (text) {  // WE send this as a Prop to AddTodo
-        // alert('new todo:' + text);
+         //alert('new todo:' + text);
         this.setState({
             todos: [                    // add to the existing array todos
                 ...this.state.todos ,
                 {
                     id: uuid(),  // add the new item
                     text: text,
-                    completed: false
+                    completed: false,
+                    createdAt: moment().unix(),
+                    completedAt: undefined
                 }
             ]
         });
@@ -34,8 +37,10 @@ var TodoApp = React.createClass({
         var updatedTodos = this.state.todos.map((todo) => {
             if (todo.id === id) {
                 todo.completed = !todo.completed;
+               // alert('completed ' + todo.completed);
+                todo.completedAt = todo.completed ? moment().unix() : undefined;
             }
-
+            //alert('completedAt ' + todo.completedAt);
             return todo;
         });
         this.setState({todos: updatedTodos});
