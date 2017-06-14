@@ -1,0 +1,48 @@
+var expect = require('expect');
+var actions = require('actions');
+
+describe('Actions', () => {
+    it('should generate search text action', () => {
+        var action = {
+            type: 'SET_SEARCH_TEXT',
+            searchText: 'Some search text'
+        };
+        var res = actions.setSearchText(action.searchText);
+
+        expect(res).toEqual(action);
+    });
+
+    it('should generate add todo function', () => {
+        var action = {
+            type: 'ADD_TODO',
+            text: 'Thing to do'
+        };
+        var res = actions.addTodo(action.text);
+
+        expect(res).toEqual(action);
+    });
+
+    it('should generate toggle show completed action', () => {
+        var action = {
+            type: 'TOOGLE_SHOW_COMPLETED'
+        };
+        var res = actions.toggleShowCompleted();
+
+        expect(res).toEqual(action);
+    });
+
+
+    it('should toggle todo function', () => {
+        var action = {
+            type: 'TOOGLE_TODO',
+            id: 1
+        };
+        var res = actions.toogleTodo(action.id);
+
+        expect(res).toEqual(action);
+    });
+
+
+});
+
+
