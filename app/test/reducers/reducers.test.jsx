@@ -19,7 +19,7 @@ describe('Reducers', () => {
     describe('showCompletedReducer', () => {
         it('should toggle show completed flag', () => {
             var action = {
-                type: 'TOOGLE_SHOW_COMPLETED'
+                type: 'TOGGLE_SHOW_COMPLETED'
             };
             var res = reducers.showCompletedReducer(df(false), df(action));
 
@@ -39,7 +39,7 @@ describe('Reducers', () => {
             expect(res[0].text).toEqual(action.text);
         });
 
-        it('it should toogle todo', () => {
+        it('it should toggle todo', () => {
             var todos = [{
                 id: '123',
                 text: 'Something',
@@ -48,7 +48,7 @@ describe('Reducers', () => {
                 completedAt: 125
             }];
             var action = {
-                type: 'TOOGLE_TODO',
+                type: 'TOGGLE_TODO',
                 id: '123'
             };
             var res = reducers.todosReducer(df(todos), df(action));

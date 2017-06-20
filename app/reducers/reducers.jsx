@@ -11,8 +11,9 @@ export var searchTextReducer = (state = '', action) => {
 };
 
 export var showCompletedReducer = (state = false, action) => {
+    console.log('In showCompletedReducer type id is: ' + action.type);
   switch (action.type) {
-      case 'TOOGLE_SHOW_COMPLETED':
+      case 'TOGGLE_SHOW_COMPLETED':
           return  !state;
       default:
           return state;
@@ -35,8 +36,8 @@ export var todosReducer = (state = [], action) => {
                 }
             ];
 
-        case 'TOOGLE_TODO':
-            console.log('In TOOGLE_TODO case ');
+        case 'TOGGLE_TODO':
+            console.log('In TOGGLE_TODO case ');
             return state.map((todo) => {
                 console.log('Issue id is' + todo.id);
                 if (todo.id === action.id) {

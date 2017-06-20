@@ -24,7 +24,7 @@ describe('Actions', () => {
 
     it('should generate toggle show completed action', () => {
         var action = {
-            type: 'TOOGLE_SHOW_COMPLETED'
+            type: 'TOGGLE_SHOW_COMPLETED'
         };
         var res = actions.toggleShowCompleted();
 
@@ -34,10 +34,10 @@ describe('Actions', () => {
 
     it('should toggle todo function', () => {
         var action = {
-            type: 'TOOGLE_TODO',
+            type: 'TOGGLE_TODO',
             id: 1
         };
-        var res = actions.toogleTodo(action.id);
+        var res = actions.toggleTodo(action.id);
 
         expect(res).toEqual(action);
     });
