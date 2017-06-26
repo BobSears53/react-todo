@@ -1,29 +1,33 @@
 export var setSearchText = (searchText) => {
-    return {
-        type: 'SET_SEARCH_TEXT',
-        searchText
-    };
+  return {
+    type: 'SET_SEARCH_TEXT',
+    searchText
+  };
 };
 
-//  toggleShowCompleted TOGGLE_SHOW_COMPLETED
 export var toggleShowCompleted = () => {
-    return {
-        type: 'TOGGLE_SHOW_COMPLETED'
-    };
+  return {
+    type: 'TOGGLE_SHOW_COMPLETED'
+  };
 };
 
 export var addTodo = (text) => {
-    return {
-        type: 'ADD_TODO',
-        text
-    };
+  return {
+    type: 'ADD_TODO',
+    text
+  };
 };
 
-// toggleTodo(id) TOOGLE_TODO
+export var addTodos = (todos) => {
+  return {
+    type: 'ADD_TODOS',
+    todos
+  };
+};
 
 export var toggleTodo = (id) => {
-    return {
-        type: 'TOGGLE_TODO',
-        id
-    };
+  return {
+    type: 'TOGGLE_TODO',
+    id
+  };
 };

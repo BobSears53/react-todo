@@ -1,8 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var expect = require('expect');
-var $ = require('jQuery');
 var TestUtils = require('react-addons-test-utils');
+var expect = require('expect');
+var $ = require('jquery');
 
 import {TodoSearch} from 'TodoSearch';
 
@@ -11,14 +11,14 @@ describe('TodoSearch', () => {
         expect(TodoSearch).toExist();
     });
 
-    it('should dispatch SET_SEARCH_TEXT on input text change', () => {
-        var action = {
-            type: 'SET_SEARCH_TEXT',
-            searchText
-        };
-        var searchText = 'Dog';
-        var spy = expect.createSpy();
-        var todoSearch = TestUtils.renderIntoDocument(<TodoSearch dispatch={spy}/>);
+  it('should dispatch SET_SEARCH_TEXT on input change', () => {
+    var searchText = 'Dog';
+    var action = {
+      type: 'SET_SEARCH_TEXT',
+      searchText
+    };
+    var spy = expect.createSpy();
+    var todoSearch = TestUtils.renderIntoDocument(<TodoSearch dispatch={spy}/>);
 
         todoSearch.refs.searchText.value = searchText;
         TestUtils.Simulate.change(todoSearch.refs.searchText);
