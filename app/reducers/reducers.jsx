@@ -24,13 +24,7 @@ export var todosReducer = (state = [], action) => {
         case 'ADD_TODO':
             return  [
                 ...state,
-                {
-                    id: uuid(),  // add the new item
-                    text: action.text,
-                    completed: false,
-                    createdAt: moment().unix(),
-                    completedAt: undefined
-                }
+               action.todo
             ];
 
         case 'TOGGLE_TODO':
@@ -53,7 +47,7 @@ export var todosReducer = (state = [], action) => {
                 ...action.todos
             ];
         default:
-            console.log('Feel to Default');
+            console.log('Fell to Default');
             return state;
     }
 };
