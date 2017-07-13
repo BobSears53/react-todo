@@ -4,9 +4,9 @@
   "description": "Simple R App",
   "main": "index.js",
   "scripts": {
-    "test": NODE_ENV=test "karma start",
-    "start": "npm run build && node server.js",
-    "build": 'webpack'
+    "test": "NODE_ENV=test karma start",
+    "build": 'webpack',
+    "start": "npm run build && node server.js"
   },
   "author": "Bob",
   "license": "ISC",
