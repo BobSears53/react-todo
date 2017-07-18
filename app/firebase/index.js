@@ -1,15 +1,12 @@
 import firebase from 'firebase';
 
 try {
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyA5HvAOsv0ySHrDHU3CnjH5vq1Uq8B8DJc",
-        authDomain: "sears-todo-app.firebaseapp.com",
-        databaseURL: "https://sears-todo-app.firebaseio.com",
-        projectId: "sears-todo-app",
-        storageBucket: "sears-todo-app.appspot.com",
-        messagingSenderId: "484566208068"
-    };
+  var config = {
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    databaseURL: process.env.DATABASE_URL,
+    storageBucket: process.env.STORAGE_BUCKET,
+  };
 
     firebase.initializeApp(config);
 } catch (e) {
