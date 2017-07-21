@@ -3,7 +3,7 @@ import * as Redux from 'react-redux';
 
 import * as actions from 'actions';
 
-export var Login = React.createClass({
+export var Login = React.createClass({ git status
     onLogin() {
         var {dispatch} = this.props;
 
