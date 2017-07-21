@@ -24,11 +24,9 @@ export var Login = React.createClass({
                             <button className="button" onClick={this.onLogin}>Login with GitHub</button>
                         </div>
                     </div>
-
                 </div>
-
             </div>
-        )
+        );
     }
 });
 
