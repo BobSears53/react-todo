@@ -12,7 +12,9 @@ import router from 'app/router';
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         store.dispatch(actions.login(user.uid));
+        store.dispatch(actions.startAddTodos());
         hashHistory.push('/todos');
+        console.log('UID after dispatch startAddTodos is:', uid);
     } else {
         store.dispatch(actions.logout());
         hashHistory.push('/');
@@ -21,7 +23,7 @@ firebase.auth().onAuthStateChanged((user) => {
 
 // import  './../playground/firebase/index';  use when in playground
 
-store.dispatch(actions.startAddTodos());
+
 
 // Load foundation
 $(document).foundation();
