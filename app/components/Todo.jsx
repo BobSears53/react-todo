@@ -3,7 +3,6 @@ var {connect} = require('react-redux');
 var moment = require('moment');
 var actions =  require('actions');
 
-//class Todo extends React.Component {
 export class Todo extends React.Component {
     render () {
         var {id, text, completed, createdAt, completedAt, dispatch} = this.props;
@@ -25,7 +24,7 @@ export class Todo extends React.Component {
                 dispatch(actions.startToggleTodo(id, !completed));
             }}>
             <div>
-                <input type="checkbox" defaultChecked={completed}/>
+                <input type="checkbox" checked={completed}/>
             </div>
             <div>
                 <p>{text}</p>
