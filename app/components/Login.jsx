@@ -3,12 +3,17 @@ import * as Redux from 'react-redux';
 
 import * as actions from 'actions';
 
-export var Login = React.createClass({
-    onLogin() {
+// class Login extends React.Component {
+export class Login extends React.Component {
+    constructor(props) {
+        super(props);
+        this.onLogin = this.onLogin.bind(this);
+    }
+    onLogin () {
         var {dispatch} = this.props;
 
         dispatch(actions.startLogin());
-    },
+    }
     render() {
         return (
             <div>
@@ -28,6 +33,6 @@ export var Login = React.createClass({
             </div>
         );
     }
-});
+};
 
 export default Redux.connect()(Login);

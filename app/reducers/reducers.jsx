@@ -46,7 +46,7 @@ export var todosReducer = (state = [], action) => {
         case 'LOGOUT':
             return [];
         default:
-            console.log('Fell to Default');
+            // console.log('Fell to Default');
             return state;
     }
 };
@@ -60,7 +60,7 @@ export var authReducer = (state = {}, action) => {
         case 'LOGOUT':
             return {};
         default:
-            console.log('Fell to Default');
+            // console.log('Fell to Default');
             return state;
     }
 };
